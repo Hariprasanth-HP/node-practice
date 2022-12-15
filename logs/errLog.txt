@@ -1,0 +1,2 @@
+20221214	11:27:20	f4ea1fc6-90f4-4ed5-af4b-fc7777e2b0b9	Error	Not allowed by CORS
+20221214	11:27:28	aaa11d05-46ee-4c1d-86fc-e0ab2437b462	Error	Not allowed by CORS
