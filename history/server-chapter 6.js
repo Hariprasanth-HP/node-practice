@@ -3,10 +3,10 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const errorHandler = require("./middleware/errorHandler");
+const errorHandler = require("../middleware/errorHandler");
 
-const logEvents = require("./middleware/logEvents");
-const { logger } = require("./middleware/logEvents");
+const logEvents = require("../middleware/logEvents");
+const { logger } = require("../middleware/logEvents");
 const PORT = process.env.PORT || 3500;
 const whiteList = [
   "https://www.google.com",

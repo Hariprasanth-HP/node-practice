@@ -3,10 +3,10 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const errorHandler = require("./middleware/errorHandler");
+const errorHandler = require("../middleware/errorHandler");
 
-const logEvents = require("./middleware/logEvents");
-const { logger } = require("./middleware/logEvents");
+const logEvents = require("../middleware/logEvents");
+const { logger } = require("../middleware/logEvents");
 const PORT = process.env.PORT || 3500;
 const whiteList = [
   "https://www.google.com",
@@ -29,10 +29,10 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "/public")));
-app.use("/", require("./routes/roots"));
-app.use("/register", require("./routes/api/register"));
-app.use("/auth", require("./routes/api/auth"));
-app.use("/employees", require("./routes/api/employees"));
+app.use("/subdir", express.static(path.join(__dirname, "/public")));
+app.use("/", require("../routes/roots"));
+app.use("/subdir", require("../routes/subdir"));
+app.use("/employees", require("../routes/api/employees"));
 
 app.all("/*", (req, res) => {
   res.status(404);

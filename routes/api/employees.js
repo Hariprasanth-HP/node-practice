@@ -1,31 +1,13 @@
 const express = require("express");
 const path = require("path");
 const router = express.Router();
-const data = {};
-data.employees = require("../../data/employees.json");
+const employeeController = require("../../controller/employeeController");
+const verifyJWT = require("../../middleware/verifyJWT");
 router
   .route("/")
-  .get((req, res) => {
-    res.json(data.employees);
-  })
-  .post((req, res) => {
-    res.json({
-      name: req.body.name,
-      age: req.body.age,
-    });
-  })
-  .put((req, res) => {
-    res.json({
-      name: req.body.name,
-      age: req.body.age,
-    });
-  })
-  .delete((req, res) => {
-    res.json({ id: req.body.id });
-  });
-router.route("/:id").get((req, res) => {
-  res.json({
-    id: req.params.id,
-  });
-});
+  .get(verifyJWT, employeeController.getAllEmployees)
+  .post(employeeController.createNewEmployee)
+  .put(employeeController.updateEmployee)
+  .delete(employeeController.deleteEmployee);
+router.route("/:id").get(employeeController.getEmployee);
 module.exports = router;

@@ -1,2 +1,4 @@
 20221214	11:27:20	f4ea1fc6-90f4-4ed5-af4b-fc7777e2b0b9	Error	Not allowed by CORS
 20221214	11:27:28	aaa11d05-46ee-4c1d-86fc-e0ab2437b462	Error	Not allowed by CORS
+20221215	18:22:30	a8fafd46-ade1-4691-92c2-6ecdb8e483a1	ReferenceError	data is not defined
+20221215	18:40:43	758ad7ec-9907-41f4-a98f-669e00043383	SyntaxError	Unexpected token } in JSON at position 12
